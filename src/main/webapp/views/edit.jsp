@@ -22,7 +22,7 @@
         
         <div>
             <h3>Mark:</h3>
-            <form:input type="number" step="any " value="${student.getMark()}" path="mark"/>
+            <form:input type="number" step="any" value="${student.getMark()}" path="mark"/>
         </div>
 
         <div>
@@ -48,8 +48,6 @@
                 </c:forEach>
             </form:select>
         </div>
-
-
         <input type="submit" value="update">
 
     </form:form>

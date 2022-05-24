@@ -37,6 +37,9 @@
       <td>
         <a href="http://localhost:8082/students/${student_detail.getId()}/edit">Edit</a>
       </td>
+      <td>
+        <a href="http://localhost:8082/students/delete/${student_detail.getId()}">Delete</a>
+      </td>
     </tr>
   </table>
   <a href="http://localhost:8082/students">Go back</a>

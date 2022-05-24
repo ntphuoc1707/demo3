@@ -143,4 +143,23 @@ public class StudentController {
         }
         return "redirect:/students/"+student.getId();
     }
+
+    @RequestMapping(value = "/delete/{id}")
+    public String deleteStudent(@PathVariable long id){
+        Session session=sessionFactory.openSession();
+        Transaction tx=null;
+        try{
+            tx=session.beginTransaction();
+            List<Student> student=session.createQuery("from Student E where E.id="+id).list();
+            session.delete(student.get(0));
+            tx.commit();
+        }catch (HibernateException e){
+            if(tx!=null) tx.rollback();
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return "redirect:/students";
+    }
 }
